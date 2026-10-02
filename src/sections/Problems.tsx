@@ -26,10 +26,7 @@ const ROWS = [
 
 export function Problems() {
   return (
-    <section
-      aria-labelledby="problems-title"
-      className="border-y border-line bg-white py-24 sm:py-28"
-    >
+    <section aria-labelledby="problems-title" className="border-y border-line bg-white section">
       <div className="container-page">
         <SectionHeading
           id="problems-title"

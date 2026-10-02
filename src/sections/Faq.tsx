@@ -39,7 +39,7 @@ const FAQS = [
 /** Native <details> — keyboard and screen-reader friendly without any script. */
 export function Faq() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="py-24 sm:py-32">
+    <section id="faq" aria-labelledby="faq-title" className="section">
       <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeading
           id="faq-title"

@@ -20,7 +20,7 @@ export function Pilot() {
     <section
       id="pilot"
       aria-labelledby="pilot-title"
-      className="relative overflow-hidden bg-beige py-24 sm:py-32"
+      className="relative overflow-hidden bg-beige section"
     >
       <Leaf className="pointer-events-none absolute -bottom-32 -left-32 h-[420px] w-[420px] text-sage/15" />
       <div className="container-page relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">

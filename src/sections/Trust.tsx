@@ -70,7 +70,7 @@ const PRINCIPLES = [
 
 export function Trust() {
   return (
-    <section id="trust" aria-labelledby="trust-title" className="py-24 sm:py-32">
+    <section id="trust" aria-labelledby="trust-title" className="section">
       <div className="container-page">
         <SectionHeading
           id="trust-title"

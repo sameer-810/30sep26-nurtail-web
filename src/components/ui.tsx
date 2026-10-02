@@ -18,15 +18,9 @@ export function SectionHeading({
   onDark?: boolean;
 }) {
   return (
-    <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
+    <div className={cn("max-w-[42rem]", align === "center" && "mx-auto text-center")}>
       <p className={cn("eyebrow", onDark && "text-gold")}>{eyebrow}</p>
-      <h2
-        id={id}
-        className={cn(
-          "display mt-3 text-[2rem] leading-[1.12] sm:text-[2.6rem]",
-          onDark && "text-paper",
-        )}
-      >
+      <h2 id={id} className={cn("display h-section mt-4", onDark && "text-paper")}>
         {title}
       </h2>
       {intro && (

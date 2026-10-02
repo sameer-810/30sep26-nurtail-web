@@ -40,7 +40,7 @@ export function Pricing() {
     <section
       id="pricing"
       aria-labelledby="pricing-title"
-      className="border-t border-line bg-white py-24 sm:py-32"
+      className="border-t border-line bg-white section"
     >
       <div className="container-page">
         <SectionHeading

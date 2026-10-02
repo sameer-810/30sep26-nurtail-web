@@ -93,14 +93,9 @@ export function Roles() {
   }
 
   return (
-    <section
-      id="roles"
-      aria-labelledby="roles-title"
-      className="bg-forest-deep py-24 text-paper sm:py-32"
-    >
+    <section id="roles" aria-labelledby="roles-title" className="section bg-beige">
       <div className="container-page">
         <SectionHeading
-          onDark
           id="roles-title"
           eyebrow="One platform, five roles"
           title="Everyone around an animal, on the same page."
@@ -109,7 +104,7 @@ export function Roles() {
         <div
           role="tablist"
           aria-label="Who Nurtail is for"
-          className="mt-12 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]"
+          className="mt-12 flex gap-1 overflow-x-auto border-b border-forest/10 [scrollbar-width:none]"
         >
           {ROLES.map((r, i) => (
             <button
@@ -131,26 +126,35 @@ export function Roles() {
                 if (e.key === "End") focusTab(ROLES.length - 1);
               }}
               className={cn(
-                "inline-flex h-12 shrink-0 items-center gap-2 rounded-full border px-5 text-[15px] font-semibold transition-colors focus-visible:ring-offset-forest-deep",
-                i === active
-                  ? "border-gold bg-gold text-forest-deep"
-                  : "border-paper/20 text-paper/80 hover:border-paper/50 hover:text-paper",
+                "relative inline-flex h-12 shrink-0 items-center gap-2 px-4 text-[15px] font-semibold transition-colors",
+                i === active ? "text-forest-deep" : "text-ink-muted hover:text-forest",
               )}
             >
               <r.icon className="h-4 w-4" /> {r.label}
+              {/* Gold underline: the one champagne moment in this section. */}
+              <span
+                aria-hidden
+                className={cn(
+                  "absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-gold transition-transform duration-200",
+                  i === active ? "scale-x-100" : "scale-x-0",
+                )}
+              />
             </button>
           ))}
         </div>
         <div
+          key={role.id}
           role="tabpanel"
           id={`panel-${role.id}`}
           aria-labelledby={`tab-${role.id}`}
           tabIndex={0}
-          className="mt-10 grid gap-10 rounded-3xl border border-paper/10 bg-forest/40 p-8 sm:p-12 lg:grid-cols-[1fr_1.2fr]"
+          className="card mt-8 grid animate-rise-fade gap-10 p-8 [animation-duration:240ms] sm:p-12 lg:grid-cols-[1fr_1.2fr]"
         >
           <div>
-            <role.icon className="h-8 w-8 text-gold" aria-hidden />
-            <h3 className="display mt-5 text-3xl text-paper sm:text-[2.2rem]">{role.title}</h3>
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint text-forest">
+              <role.icon className="h-5 w-5" aria-hidden />
+            </span>
+            <h3 className="display mt-5 text-3xl sm:text-[2.2rem]">{role.title}</h3>
             <a
               href={role.cta.href}
               onClick={(e) => {
@@ -162,15 +166,15 @@ export function Roles() {
                 );
                 document.getElementById("pilot")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="btn mt-8 bg-paper text-forest hover:bg-beige"
+              className="btn-primary mt-8"
             >
               {role.cta.label}
             </a>
           </div>
           <ul className="space-y-4 self-center">
             {role.points.map((p) => (
-              <li key={p} className="flex gap-3 text-[17px] text-paper/90">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-gold" aria-hidden /> {p}
+              <li key={p} className="flex gap-3 text-[17px] text-ink">
+                <Check className="mt-1 h-5 w-5 shrink-0 text-forest" aria-hidden /> {p}
               </li>
             ))}
           </ul>

@@ -295,7 +295,7 @@ test.describe("layout", () => {
         () => document.documentElement.scrollWidth - window.innerWidth,
       );
       expect(overflow).toBeLessThanOrEqual(0);
-      const mockup = await page.getByRole("img", { name: /Illustration of Nurtail/ }).boundingBox();
+      const mockup = await page.getByTestId("hero-visual").boundingBox();
       expect(mockup!.x + mockup!.width).toBeLessThanOrEqual(width);
       // Header nav stays on one line.
       const nav = await page.getByRole("navigation", { name: "Main" }).boundingBox();
