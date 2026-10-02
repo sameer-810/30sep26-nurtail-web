@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
       <Leaf className="pointer-events-none absolute -right-40 -top-24 hidden h-[560px] w-[560px] text-sage/10 lg:block" />
-      <div className="container-wide grid items-center gap-14 pb-20 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:pb-28 lg:pt-16">
+      <div className="container-wide grid items-center gap-12 pb-16 pt-8 sm:pt-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:pb-[clamp(3rem,8vh,7rem)] lg:pt-[clamp(1.5rem,4vh,4rem)]">
         <div>
           <p className="inline-flex animate-rise items-center gap-2 rounded-full border border-gold/50 bg-gold-soft/60 px-3.5 py-1.5 text-[13px] font-semibold text-gold-ink">
             <span className="h-1.5 w-1.5 rounded-full bg-coral" aria-hidden /> Now inviting founding
@@ -18,16 +18,16 @@ export function Hero() {
           </p>
           <h1
             id="hero-title"
-            className="display h-hero mt-6 max-w-[14ch] animate-rise [animation-delay:60ms]"
+            className="display h-hero mt-5 max-w-[20ch] animate-rise [animation-delay:60ms]"
           >
             Every animal, <em className="text-forest">known</em> and{" "}
             <em className="text-forest">cared for</em>.
           </h1>
-          <p className="lead mt-6 max-w-[36ch] animate-rise-fade [animation-delay:120ms]">
+          <p className="lead mt-5 max-w-[38ch] animate-rise-fade [animation-delay:120ms]">
             One trusted record for every animal, shared safely with the fosters, adopters, vets and
             verified carers around it.
           </p>
-          <div className="mt-9 flex flex-col gap-4 animate-rise-fade [animation-delay:180ms] sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+          <div className="mt-7 flex flex-col gap-4 animate-rise-fade [animation-delay:180ms] sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <a href="/#pilot" className="btn-primary h-14 px-7 text-base">
               Become a founding partner <ArrowRight className="arrow h-4 w-4" aria-hidden />
             </a>
@@ -35,7 +35,7 @@ export function Hero() {
               See how verified care works <ArrowRight className="arrow h-4 w-4" aria-hidden />
             </a>
           </div>
-          <p className="mt-10 animate-rise-fade text-[13px] font-medium text-ink-muted [animation-delay:240ms]">
+          <p className="mt-8 animate-rise-fade text-[13px] font-medium text-ink-muted [animation-delay:240ms]">
             Built for UK rescues · Badges checked by a person · Designed for UK GDPR
           </p>
         </div>
@@ -60,7 +60,7 @@ export function Hero() {
                 alt="Bramble, a brown mixed-breed rescue dog, looking calmly at the camera"
                 fetchPriority="high"
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-[50%_38%] lg:max-h-[calc(100svh-15rem)] lg:min-h-[360px]"
               />
             </picture>
           </div>

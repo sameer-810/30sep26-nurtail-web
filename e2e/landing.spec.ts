@@ -303,3 +303,33 @@ test.describe("layout", () => {
     });
   }
 });
+
+/**
+ * First paint on real laptops: the primary action and the animal's face must be
+ * on screen without scrolling. 1536×660 is a 1920×1080 window at 125% zoom.
+ */
+test.describe("first viewport", () => {
+  for (const [width, height] of [
+    [1280, 720],
+    [1366, 768],
+    [1536, 660],
+    [1536, 864],
+    [1920, 1080],
+  ]) {
+    test(`CTA and photo are above the fold at ${width}×${height}`, async ({ page }) => {
+      await page.setViewportSize({ width, height });
+      await page.goto("/");
+      const cta = page
+        .locator("main")
+        .getByRole("link", { name: "Become a founding partner" })
+        .first();
+      await expect(cta).toBeInViewport({ ratio: 1 });
+      const photo = await page.locator("[data-testid=hero-visual] img").boundingBox();
+      expect(photo!.y).toBeGreaterThanOrEqual(0);
+      expect(photo!.y + photo!.height).toBeLessThanOrEqual(height);
+      await expect(
+        page.locator("[data-testid=hero-visual]").getByText("Verified rescue"),
+      ).toBeInViewport();
+    });
+  }
+});
