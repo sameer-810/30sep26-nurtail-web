@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "build": {
+    "env": {
+      "VITE_SITE_URL": "https://30sep26-nurtail-web.vercel.app",
+      "VITE_APP_URL": "https://30sep26-nurtail-front.vercel.app",
+      "VITE_API_BASE_URL": "https://three0sep26-nurtail-back.onrender.com/api"
+    }
+  }
+}
